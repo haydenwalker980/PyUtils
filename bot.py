@@ -1,4 +1,9 @@
 #! /usr/bin/env python3
+# -*- coding:utf-8 -*-
+#
+# @name   : Discord-Bot-Template - Easy-to-learn template for discord bot making!
+# @url    : https://github.com/Cisc0-gif
+# @author : Cisc0-gif
 import discord
 import asyncio
 import logging
