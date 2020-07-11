@@ -1,6 +1,6 @@
-# Discord.py v1.3 Bot Template
+# Discord.py v1.5 Bot Template
 
-The Discord.py v1.3 Bot Template allows any user of any skill level to have a working discord bot in under 5 minutes for their servers. Everything is of course open source and can changed to their needs.
+The Discord.py v1.5 Bot Template allows any user of any skill level to have a working discord bot in under 5 minutes for their servers. Everything is of course open source and can changed to their needs.
 
 COMING SOON: **Adding tkinter GUI option!**
 
