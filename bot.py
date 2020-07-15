@@ -4,18 +4,17 @@
 # @name   : Discord-Bot-Template - Easy-to-learn template for discord bot making!
 # @url    : https://github.com/Cisc0-gif
 # @author : Cisc0-gif
+
 import discord
 import asyncio
 import logging
-import tkinter
 import os
 import random
 import time
 import sys
 
 client = discord.Client(command_prefix='/', description='Basic Commands')
-
-TOKEN = ''
+TOKEN = 'NjYwOTU0OTI0Njk1MTU4ODM0.XvuEvw.1ZYU370BhMDCx_Sv3dT1dphUgaI'
 
 # Go To https://discordapp.com/developers/applications/ and start a new application for Token
 
@@ -24,6 +23,10 @@ logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s:%(message)s'))
 logger.addHandler(handler)
+
+def client_run():
+    client.loop.create_task(background_loop())
+    client.run(TOKEN)
 
 def logwrite(msg): #writes chatlog to MESSAGES.log
     with open('MESSAGES.log', 'a+') as f:
@@ -119,7 +122,9 @@ async def on_message(message):
     if message.content == "/whoami": #if author types /whoami bot responds with username
         await channel.send(message.author)
 
+client_run()
 
+"""
 if len(sys.argv) != 2 or '--help' in sys.argv or '-h' in sys.argv:
     print('Discord Bot Template v1.4')
     print('Sourced on Github and created by Cisc0-gif, Ecorp7@protonmail.com\n')
@@ -136,3 +141,18 @@ tool = sys.argv[1]
 if tool == '-t' or tool == '--text':
     client.loop.create_task(background_loop())
     client.run(TOKEN)
+
+if tool == '-g' or tool == '--gui':
+    root = Tk()
+    root.geometry("250x250")
+    root.title("Discord Bot Template")
+    startbutton = Button(root,text="Start", command = client_run)
+    startbutton.place(x=100, y=100)
+    stopbutton = Button(root,text="Stop", command = exit)
+    stopbutton.place(x=100, y=200)
+    startbutton.pack()
+    stopbutton.pack()
+    root.mainloop()
+    root.destroy()
+    root.mainloop()
+"""
