@@ -53,7 +53,7 @@ async def on_ready():
     print("UID:")
     print(client.user.id)
     print('---------------------------------------------')
-    print("LIVE CHAT LOG - See discord.log For History")
+    print("LIVE CHAT LOG - See MESSAGES.log For History")
     print("---------------------------------------------")
     await client.change_presence(activity=discord.Game("Running..."), status=discord.Status.online)
 
