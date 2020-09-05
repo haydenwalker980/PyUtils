@@ -36,8 +36,8 @@ def logwrite(msg): #writes chatlog to MESSAGES.log
 async def background_loop():
     await client.wait_until_ready()
     while not client.is_closed:
-        print("Booted Up @ " + time.ctime())
-        logwrite("Booted Up @ " + time.ctime())
+        print("PyUtils has completed initial bootup. Time elapsed:" + time.ctime())
+        logwrite("Initial Bootup Time:" + time.ctime())
         await asyncio.sleep(3600)  #Bootup Message
 
 @client.event
@@ -52,10 +52,11 @@ async def on_ready():
     print(client.user)
     print("UID:")
     print(client.user.id)
+    print("PyUtils running version 1. All bootup has completed.")
     print('---------------------------------------------')
     print("LIVE CHAT LOG - See MESSAGES.log For History")
     print("---------------------------------------------")
-    await client.change_presence(activity=discord.Game("Running..."), status=discord.Status.online)
+    await client.change_presence(activity=discord.Game("PyUtils v1.0.0 | /help for commands"), status=discord.Status.online)
 
 @client.event
 async def on_member_join(member):
